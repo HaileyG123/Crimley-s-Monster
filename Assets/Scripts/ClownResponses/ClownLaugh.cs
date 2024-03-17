@@ -10,7 +10,8 @@ public class ClownLaugh : MonoBehaviour
     public void Laugh()
     {
         Debug.Log("laughing called");
-        clownAnimator.SetBool("IsLaughing", true);
+        //clownAnimator.SetBool("IsLaughing", true);
         Instantiate(key);
+        //this.gameObject.SetActive(false);
     }
 }
