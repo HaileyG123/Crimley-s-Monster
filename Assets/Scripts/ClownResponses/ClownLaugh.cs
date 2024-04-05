@@ -11,7 +11,14 @@ public class ClownLaugh : MonoBehaviour
     {
         Debug.Log("laughing called");
         //clownAnimator.SetBool("IsLaughing", true);
-        Instantiate(key);
+        StartCoroutine(GiveKey());
         //this.gameObject.SetActive(false);
+    }
+
+    private IEnumerator GiveKey()
+    {
+        Instantiate(key);
+        yield return new WaitForSeconds(1f);
+        this.gameObject.SetActive(false);
     }
 }

@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpingPower: 30
+  isFacingRight: 0
   rb: {fileID: 3534320103669629346}
   groundCheck: {fileID: 3534320105287323042}
   groundLayer:

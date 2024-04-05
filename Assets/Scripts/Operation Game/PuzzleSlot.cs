@@ -8,9 +8,11 @@ public class PuzzleSlot : MonoBehaviour
     
     [SerializeField] private AudioSource _source;
     [SerializeField] private AudioClip _completeClip;
+    public bool placed = false;
 
     public void Placed()
     {
+        placed = true;
         _source.PlayOneShot(_completeClip);
     }
 }

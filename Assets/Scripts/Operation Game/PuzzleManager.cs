@@ -18,7 +18,7 @@ public class PuzzleManager : MonoBehaviour
 
     void Spawn()
     {
-        var randomSet = _slotPrefabs.OrderBy(s=>Random.value).Take(2).ToList();
+        var randomSet = _slotPrefabs.OrderBy(s => Random.value).Take(2).ToList();
 
         for (int i = 0; i < randomSet.Count; i++)
         {
