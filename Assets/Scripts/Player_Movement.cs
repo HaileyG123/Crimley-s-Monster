@@ -16,6 +16,10 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
         horizontal = Input.GetAxisRaw("Horizontal"); 
 
         if(Input.GetButtonDown("Jump") && IsGrounded())
@@ -33,6 +37,10 @@ public class Player_Movement : MonoBehaviour
 
     private void FixedUpdate() 
     {
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
