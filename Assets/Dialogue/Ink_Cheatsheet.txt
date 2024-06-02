@@ -1,0 +1,276 @@
+Inky cheatsheet
+- //comment
+- /* block of comment */
+- text nhjkfdbfkjsdbf
+  erbfksdbfksdjbfkdsb
+
+Knots
+-> Ink -> Basic structure -> Knot (main section)
+=== main ===
+This is the content of the knot.
+-> END
+
+Diverts
+- displays text in main in the output
+-> Ink -> Basic structure -> Divert
+
+-> main
+
+=== main ===
+This is the content of the knot.
+-> END
+
+- Note: -> END ends the story, -> DONE ends the flow in the story and doesn't necessarily 
+bring an end to the entire story
+
+Basic Choices
+DO you like anime?
+* Yes
+    Me too! //response 1
+* No
+    Oh, too bad. //response 2
+->Ink -> Choices -> Basic Choice
+
+Do you like anime?
+* [Yes] //wrapping in brackets means choice won't appear when response prints
+    Me too! //response 1
+* [No]
+    Oh, too bad. //response 2
+
+Loop
+-> main
+
+=== main ===
+Which pokemon do you choose?
+    * [Charmander]
+        You chose Charmander!
+        -> main
+    * [Bulbasaur]
+        You chose Bulbasaur!
+        -> main
+    * [Squirtle]
+        You chose Squirtle!
+        -> main
+-> END
+
+Fallback choices
+-> main
+
+=== main ===
+Which pokemon do you choose?
+    * [Charmander]
+        You chose Charmander!
+        -> main
+    * [Bulbasaur]
+        You chose Bulbasaur!
+        -> main
+    * [Squirtle]
+        You chose Squirtle!
+        -> main
+    * ->
+    There are no more pokemon to choose. //fallback choice
+-> END
+
+Sticky choices
+-> main
+
+=== main ===
+Which pokemon do you choose?
+    + [Charmander]
+        You chose Charmander!
+        -> main
+    + [Bulbasaur]
+        You chose Bulbasaur!
+        -> main
+    + [Squirtle]
+        You chose Squirtle!
+        -> main
+-> END
+
+Variables
+VAR myNumber = 5 //accessible everywhere, global variable
+temp myTemporaryValue = 5 //accessible only in declared section
+CONST myConstant = 5 
+
+VAR pokemon = ""
+
+Example1
+-> main
+
+=== main ===
+Which pokemon do you choose?
+    + [Charmander]
+        ~ pokemon = "Charmander"
+        -> chosen
+    + [Bulbasaur]
+        ~ pokemon = "Bulbasaur"
+        -> chosen
+    + [Squirtle]
+        ~ pokemon = "Squirtle"
+        -> chosen
+        
+===chosen===
+You chose {pokemon}!
+-> END
+
+Example2
+-> main
+
+=== main ===
+Which pokemon do you choose?
+    + [Charmander]
+        -> chosen("Charmander")
+    + [Bulbasaur]
+        -> chosen("Bulbasaur")
+    + [Squirtle]
+        -> chosen("Squirtle")
+        
+===chosen(pokemon)===
+You chose {pokemon}!
+-> END
+
+Weave - stories that have an always forward direction
+- gathers and nested choices
+-> main
+
+=== main ===
+How is the weather?
+    * Sunny
+        That conversation was great!
+        -> DONE //diverts straight to end of story
+    * Snowy
+        That conversation was great!
+        -> DONE
+    * Rainy
+        That conversation was great!
+        -> DONE
+    * Foggy
+        That conversation was great!
+        -> DONE
+-> END
+
+-> main
+
+Gathers
+=== main ===
+How is the weather?
+    * Sunny
+    * Snowy
+    * Rainy
+    * Foggy
+
+- that conversation was great! //gather statement
+
+-> END
+
+=== main ===
+How is the weather?
+    * Sunny
+        Really? 
+            **Yeah, really...
+            **No, not really. //nested choices
+        - - Oh ok //nest gather statement
+    * Snowy
+    * Rainy
+    * Foggy
+
+- that conversation was great! //gather statement
+
+-> END
+
+Conditional Logic
+Ink -> Inline Logic -> Condition
+VAR myVariable = 4
+
+{myVariable < 5: This is written if yourVariable is true|Otherwise this is written}
+
+Ink -> Multi-line logic -> Condition
+VAR myVariable = 4
+
+{myVariable < 5:
+    This is written if yourVariable is true.
+  - else:
+    Otherwise this is written.
+}
+
+Switch statements
+VAR myVariable = 2
+
+{myVariable: 
+- 0: zero
+- 1: one
+- 2: two
+- else: lots
+}
+
+VAR isTrue = true
+VAR isFalse = false
+
+* { isTrue } [Choice 1]
+* { isTrue } [Choice 2]
+* { isFalse } [Choice 3]
+
+Maths and functions
+adding in output - {5+3}
+
+functions
+{add(5,3)}
+
+=== function add(a,b) ===
+~ return a + b
+
+ink's built in functions
+- Random(1,5) - generate random numbers between 1 and 5 inclusive
+- Turn() - returns how many turns you've completed in the dialogue
+
+Tags
+-information held in dialogue line and is easily accessible in C# code
+Hello, my name is Bob # speaker: Bob
+Hi Bob, my name is Karen # speaker: Karen
+
+# panel: top
+# color: blue
+# portrait: bob_happy
+Hello, my name is Bob # speaker: Bob
+Hi Bob, my name is Karen # speaker: Karen
+
+#author: BOB
+#title: My wonderful Life
+
+-> new_york
+
+=== new_york ===
+# location: United States 
+# overview: new_york.ogg
+# require: Train ticket
+First line of content in the knot
+-> END
+
+Stitches
+-> knot1.stitch1
+
+=== knot1 ===
+This is the content of the knot.
+-> DONE
+
+= stitch1
+This is the first stitch in the first knot.
+-> stitch2
+
+= stitch2
+This is the second stitch in the first knot
+-> DONE
+
+=== knot2 ===
+This is the content of the second knot.
+-> DONE
+
+= stitch3
+This is the first stitch in the second knot.
+-> DONE
+
+= stitch4
+This is the second stitch in the second knot
+-> DONE
+
+Includes
