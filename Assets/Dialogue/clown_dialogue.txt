@@ -6,7 +6,8 @@ honk...honk... I'm so sad... honk...
 		I'm so lonely :(((
 		->main.stitch1
 	*[HAHAHA that sucks]
-		Don't laugh at me >:( I'm lonely! That's why I'm sad!!
+		Don't laugh at me >:(
+		I'm lonely! That's why I'm sad!!
 		->main.stitch1
 		
 -> DONE
@@ -17,7 +18,8 @@ honk...honk... I'm so sad... honk...
     ->END
 *[What can I do to help?]
 *[Sorry to hear that]
-	- Well, there is one thing you could do... Tell me a joke pleaasssee
+	- Well, there is one thing you could do...
+		Tell me a joke pleaasssee
 	**[Joke 1]
 		HAHAHAHAHAHAHAHAHAHAHA You're very good! #key
 		->END
@@ -25,6 +27,7 @@ honk...honk... I'm so sad... honk...
 		That was terrible. Go away! #nothing
 		->END
 	**[Joke 3]
-		THAT WAS THE WORST JOKE EVER! I'M GOING TO KILL YOU NOW!!!!!! #kill
+		THAT WAS THE WORST JOKE EVER! 
+		I'M GOING TO KILL YOU NOW!!!!!! #kill
 		->END
 -> DONE

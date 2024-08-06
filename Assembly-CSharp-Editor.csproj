@@ -817,14 +817,14 @@
     <Reference Include="Unity.InternalAPIEditorBridge.005">
       <HintPath>C:\Users\gumtr\Documents\GitHub\Crimley-s-Monster\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.005.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>C:\Users\gumtr\Documents\GitHub\Crimley-s-Monster\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
       <HintPath>C:\Users\gumtr\Documents\GitHub\Crimley-s-Monster\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
       <HintPath>C:\Users\gumtr\Documents\GitHub\Crimley-s-Monster\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow.Editor">
+      <HintPath>C:\Users\gumtr\Documents\GitHub\Crimley-s-Monster\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>C:\Users\gumtr\Documents\GitHub\Crimley-s-Monster\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
