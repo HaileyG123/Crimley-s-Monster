@@ -69,6 +69,8 @@ public class DialogueManager : MonoBehaviour
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+        
+        Debug.Log(currentStory.currentTags.Count);
 
         ContinueStory();
     }
@@ -114,6 +116,7 @@ public class DialogueManager : MonoBehaviour
             choices[index].gameObject.SetActive(true);
             choiceText[index].text = choice.text;
             index++;
+            Debug.Log(currentStory.currentTags.Count);
         }
         //go through the remaining choices the UI supports and make sure they're hidden
         for (int i = index; i < choices.Length; i++)
